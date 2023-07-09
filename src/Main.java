@@ -14,10 +14,10 @@ public class Main {
         employees[8] = new Employee("Петров Петр Петрович", 4, 69894);
         employees[9] = new Employee("Иванов Иван Иванович", 5, 168496);
         PrintAll();
-        System.out.println("Сумма затрат на зарплаты в месяц "+findTotalSalary());
+        System.out.printf("Сумма затрат на зарплаты в месяц %.2f\n",findTotalSalary());
         System.out.println("Минимальная зарплата: "+ getSalaryEmployeeSMin());
         System.out.println("Максимальная зарплата: "+ getSalaryEmployeeSMax());
-        System.out.println("Средняя зарплата: "+findAverageSalary());
+        System.out.printf("Средняя зарплата: %.2f\n",findAverageSalary());
         PrintFIO();
     }
 

@@ -13,17 +13,17 @@ public class Main {
         employees[7] = new Employee("Александров Александр Александрович", 3, 54531);
         employees[8] = new Employee("Петров Петр Петрович", 4, 69894);
         employees[9] = new Employee("Иванов Иван Иванович", 5, 168496);
-        PrintAll();
+        printAll();
         System.out.printf("Сумма затрат на зарплаты в месяц %.2f\n",findTotalSalary());
         System.out.println("Минимальная зарплата: "+ getSalaryEmployeeSMin());
         System.out.println("Максимальная зарплата: "+ getSalaryEmployeeSMax());
         System.out.printf("Средняя зарплата: %.2f\n",findAverageSalary());
-        PrintFIO();
+        printFIO();
     }
 
 
 
-    private static void PrintAll() {
+    private static void printAll() {
         for (Employee employee : employees) {
             System.out.println(employee);
         }
@@ -37,31 +37,27 @@ public class Main {
     }
 
     private static Employee getSalaryEmployeeSMin(){
-        double minSalary = employees[0].getSalaryEmployee();
-        Employee salaryMin = null;
+        Employee minSalary = employees[0];
         for (Employee employee : employees) {
-            if (minSalary > employee.getSalaryEmployee()) {
-                minSalary = employee.getSalaryEmployee();
-                salaryMin = employee;
+            if (minSalary.getSalaryEmployee() > employee.getSalaryEmployee()) {
+                minSalary = employee;
             }
         }
-           return salaryMin;
+           return minSalary;
     }
     private static Employee getSalaryEmployeeSMax(){
-        double minSalary = employees[0].getSalaryEmployee();
-        Employee salaryMax = null;
+        Employee maxSalary = employees[0];
         for (Employee employee : employees) {
-            if (minSalary < employee.getSalaryEmployee()) {
-                minSalary = employee.getSalaryEmployee();
-                salaryMax = employee;
+            if (maxSalary.getSalaryEmployee() < employee.getSalaryEmployee()) {
+                maxSalary = employee;
             }
         }
-        return salaryMax;
+        return maxSalary;
     }
     private static double findAverageSalary() {
         return findTotalSalary()/ employees.length;
     }
-    private static void PrintFIO() {
+    private static void printFIO() {
         for (Employee employee : employees) {
             System.out.println(employee.getfIO());
         }
